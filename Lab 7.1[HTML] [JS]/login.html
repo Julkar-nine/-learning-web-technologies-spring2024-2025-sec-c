@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      .error {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="return validateForm()">
+      <label>Name</label><br />
+      <br />
+      <input type="text" name="name" id="name" /><br />
+      <br />
+      <input type="submit" class="sub-but" value="Submit" /><br />
+      <p></p>
+      <br />
+    </form>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+
+        let name = document.getElementById("name");
+        if (name.value === "") {
+          name.innerHTML = "Please type your username first!";
+          name.classList.add("error");
+          isValid = false;
+        }
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
